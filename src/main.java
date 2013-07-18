@@ -52,6 +52,10 @@ public class main {
 		return vec3;	
 	}
 	
+	
+	
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -60,14 +64,22 @@ public class main {
 		Vector abs = new Vector();
 		Vector epr = new Vector();
 		
+		
+				
 		String filename = "src/sim/Cr7Mn_pJCrCr15.0000JCrMn15.0000.epr";
-		field = readAndSplit(filename,1);
-		abs = readAndSplit(filename,2);
-		epr = differentiate(abs,field);
+		Simulation simone = new Simulation(filename);
+		
+		simone.field = readAndSplit(simone.filename,1);
+		abs = readAndSplit(simone.filename,2);
+		simone.epr = differentiate(abs,simone.field);
+		simone = new Simulation(0.2,0.3,field,epr);
+		
+		filename = "src/exp/Cr7Mnp_qband.txt";		
+		Experiment Cr7Mnp = new Experiment(filename);
+		Cr7Mnp.field = readAndSplit(Cr7Mnp.filename,1);
+		Cr7Mnp.epr = readAndSplit(Cr7Mnp.filename,2);
 		
 		
-		
-	
 		
 
 	}
