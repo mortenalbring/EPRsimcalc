@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Vector;
 
+import org.jfree.data.xy.XYSeries;
+
 
 public class fileIO {
 	public static Vector readAndSplit(String filename,int splitColNum) {
@@ -38,5 +40,14 @@ public class fileIO {
 			System.err.println("Error: " + e.getMessage());
 		}
 		return col;
+	}
+	
+	public static XYSeries vecToSeries(String seriesname, Vector a, Vector b) {
+	
+		XYSeries c = new XYSeries(seriesname);
+		for(int i=0;i<a.size();i++) {
+			c.add((Float)a.get(i),(Float)b.get(i));
+		}	
+		return c;
 	}
 }

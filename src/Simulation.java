@@ -1,11 +1,13 @@
 import java.util.Vector;
+import org.jfree.data.xy.XYSeries;
+
 public class Simulation {
 	public double JCrCr = 0;
 	public double JCrM = 0;
 	public Vector field;
 	public Vector epr;
-	public String filename;
-	
+	public XYSeries data;
+	public String filename;	
 	
 	public Simulation(String f) {
 		filename = f;

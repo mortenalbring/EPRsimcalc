@@ -15,11 +15,7 @@ public class Plot {
 	public XYSeriesCollection dataset;
 	
 	public static void main (String[] args) {
-		XYSeries d = new XYSeries("moop");
-		d.add(1,2);
-		d.add(2,3);
-		d.add(4,5);
-        new Plot(d);
+
     }
 	
 	public Plot (XYSeries d) {

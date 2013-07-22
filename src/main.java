@@ -25,23 +25,32 @@ public class main {
 		
 		simone.field = fileIO.readAndSplit(simone.filename,1);
 		abs = fileIO.readAndSplit(simone.filename,2);
+		
+		System.out.println(simone.field.size());
+		System.out.println(abs.size());
+		
 		simone.epr = maths.differentiate(abs,simone.field);
-		simone = new Simulation(0.2,0.3,field,epr);
+		
+		
+		System.out.println(simone.epr.size());
+		
+
+		simone.data = fileIO.vecToSeries(filename, simone.field, simone.epr);
+		
+		
 		
 		filename = "src/exp/Cr7Mnp_qband.txt";		
 		Experiment Cr7Mnp = new Experiment(filename);
 		Cr7Mnp.field = fileIO.readAndSplit(Cr7Mnp.filename,0);
 		Cr7Mnp.epr = fileIO.readAndSplit(Cr7Mnp.filename,1);
+		Cr7Mnp.data = fileIO.vecToSeries(filename, Cr7Mnp.field, Cr7Mnp.epr);
 		
 		
 		XYSeriesCollection setofdata;
 		setofdata = new XYSeriesCollection();
 		
-		XYSeries d = new XYSeries(filename);
-		for(int i=0;i<Cr7Mnp.field.size();i++) {
-			d.add((Float)Cr7Mnp.field.get(i),(Float)Cr7Mnp.epr.get(i));
-		}
-		setofdata.addSeries(d);
+		setofdata.addSeries(simone.data);
+		setofdata.addSeries(Cr7Mnp.data);
 
 		Plot p = new Plot(setofdata);
 		
