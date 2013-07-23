@@ -31,10 +31,10 @@ public class main {
 		
 		simone.epr = maths.differentiate(abs,simone.field);
 		
+		simone.epr = maths.normalise(simone.epr);
 		
 		System.out.println(simone.epr.size());
 		
-
 		simone.data = fileIO.vecToSeries(filename, simone.field, simone.epr);
 		
 		
