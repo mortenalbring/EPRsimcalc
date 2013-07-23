@@ -8,14 +8,15 @@ import org.jfree.data.xy.XYSeries;
 
 
 public class fileIO {
+	/**
+	 * Reads in a file and splits it by any string delimiter,
+	 * and returns a vector corresponding to the column given.
+	 * @param filename the file that is going to be read and split
+	 * @param splitColNum the column number that will be returned
+	 * @return a vector containing that column
+	 */
 	public static Vector readAndSplit(String filename,int splitColNum) {
-		/**
-		 * Reads in a file and splits it by any string delimiter,
-		 * and returns a vector corresponding to the column given.
-		 * @param filename the file that is going to be read and split
-		 * @param splitColNum the column number that will be returned
-		 * @return a vector containing that column
-		 */
+
 		Vector col = new Vector(1,1);
 		try{
 			// Open file

@@ -1,6 +1,10 @@
 import java.util.Vector;
 import org.jfree.data.xy.XYSeries;
 
+/**
+ * Simulation contains parameters necessary for simulation
+ */
+
 public class Simulation {
 	public double JCrCr = 0;
 	public double JCrM = 0;
