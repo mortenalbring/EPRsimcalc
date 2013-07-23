@@ -51,25 +51,29 @@ public class maths {
 		p = (Float)s.v2x.get(0);
 		System.out.println(p);
 		
-		
-
 		for(int j=0;j<s.v2x.size();j++) {
+			//Loops through elements of v2x
+			
 			p = (Float)s.v2x.get(j);
 			System.out.println(p);			
 			float diff;
 			float diffsmallest = 100000000;
 			int diffsmallestpos = 0;
+			
 			for(int i=0;i<s.v1x.size();i++) {
+				//Calculates the difference between v2x and v1x
 				diff = Math.abs(((Float)s.v1x.get(i) - (Float)s.v2x.get(j)));
 				if (diff < diffsmallest) {
+					//Finds where difference is smallest and keeps track of that position
 					diffsmallest = diff;
 					diffsmallestpos = i;
 				}	
 			}
+			//Adds those elements to a new vector
 			matchVecX.add(s.v1x.get(diffsmallestpos));
 			matchVecY.add(s.v1y.get(diffsmallestpos));
 		}
-		
+		//Return those
 		matchSet k = new matchSet(matchVecX,matchVecY,s.v2x,s.v2y);
 		
 		return k; 

@@ -43,6 +43,13 @@ public class fileIO {
 		return col;
 	}
 	
+	/**
+	 * Makes an XYSeries out of two vectors
+	 * @param seriesname Name of series
+	 * @param a Vector 1
+	 * @param b Vector 2
+	 * @return
+	 */
 	public static XYSeries vecToSeries(String seriesname, Vector a, Vector b) {
 	
 		XYSeries c = new XYSeries(seriesname);

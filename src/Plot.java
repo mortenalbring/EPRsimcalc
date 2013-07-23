@@ -18,17 +18,27 @@ public class Plot {
 
     }
 	
+	/**
+	 * Plot a single XYseries of data containing two columns
+	 * @param d XYSeries
+	 */
 	public Plot (XYSeries d) {
 		dataset = new XYSeriesCollection();		
 		dataset.addSeries(d);
 		showGraph();
 	}
+	/**
+	 * Plot XYSeriesCollection, containing a whole series of data
+	 * @param d XYSeriesCollection of several XYSeries
+	 */
 	public Plot (XYSeriesCollection d) {
 		dataset = d;		
 		showGraph();
 	}
 	
-	
+	/**
+	 * Creates chart
+	 */
 	public void showGraph() {
 		final JFreeChart chart = createChart(dataset);
 		final ChartPanel chartPanel = new ChartPanel(chart);
@@ -39,7 +49,11 @@ public class Plot {
         frame.setVisible(true);
 	}
 	
-	
+	/**
+	 * Plot graph
+	 * @param dataset XYSeries dataset
+	 * @return chart
+	 */
 	 public JFreeChart createChart(final XYDataset dataset) {
 	        final JFreeChart chart = ChartFactory.createScatterPlot(
 	            "Title",                  // chart title
